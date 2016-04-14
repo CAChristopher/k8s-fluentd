@@ -58,4 +58,4 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Run the Fluentd service.
-CMD ["/start.sh"]
+ENTRYPOINT ["/start.sh"]
