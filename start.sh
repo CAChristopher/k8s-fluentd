@@ -1,5 +1,5 @@
 
-#!/bin/bash
+#!/bin/sh
 
 # SIGTERM-handler
 term_handler() {
