@@ -51,5 +51,11 @@ RUN td-agent-gem install fluent-plugin-kubernetes_metadata_filter fluent-plugin-
 # Copy the Fluentd configuration file.
 COPY td-agent.conf /etc/td-agent/td-agent.conf
 
+# Copy start script so we can pass env variables for aws
+COPY start.sh /start.sh
+
+# Executable
+RUN chmod +x /start.sh
+
 # Run the Fluentd service.
-ENTRYPOINT ["td-agent"]
+ENTRYPOINT ["/start.sh"]
