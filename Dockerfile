@@ -23,11 +23,9 @@ COPY fluent.conf /etc/fluent/
 
 COPY start.sh /start.sh
 
-ENV FLUENTD_CONF="fluent.conf"
-
 RUN chmod +x /start.sh
 
-CMD ["/start.sh"]
+CMD ["ash", "/start.sh"]
 
 # CMD exec fluentd -c /etc/fluent/$FLUENTD_CONF $FLUENTD_OPT
 
