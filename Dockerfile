@@ -14,7 +14,7 @@ RUN apk --no-cache --update add \
     echo 'gem: --no-document' >> /etc/gemrc && \
     gem install oj && \
     gem install fluentd && \
-    apk del build-base ruby-dev && \
+    # apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 RUN fluent-gem install fluent-plugin-kubernetes_metadata_filter fluent-plugin-elasticsearch fluent-plugin-aws-elasticsearch-service
@@ -23,7 +23,6 @@ COPY fluent.conf /etc/fluent/
 
 COPY start.sh /start.sh
 
-ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
 RUN chmod +x /start.sh
