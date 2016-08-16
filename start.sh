@@ -12,9 +12,9 @@ sed -ie "s/ES_AWS_SECRET_ACCESS_KEY/${ES_AWS_SECRET_ACCESS_KEY}/g" /etc/fluent/f
 
 set -x
 
-sed -ie "s,ES_ENDPOINT,${ES_ENDPOINT},g" /etc/fluent/fluent.conf
-sed -ie "s/ES_REGION/${ES_REGION}/g" /etc/fluent/fluent.conf
+sed -ie "s|ES_ENDPOINT|${ES_ENDPOINT}|g" /etc/fluent/fluent.conf
+sed -ie "s|ES_REGION|${ES_REGION}|g" /etc/fluent/fluent.conf
 
-sed -ie "s,ZOO_IPS,${ZOO_IPS},g" /etc/fluent/fluent.conf
+sed -ie "s|ZOO_IPS|${ZOO_IPS}|g" /etc/fluent/fluent.conf
 
 fluentd -c /etc/fluent/fluent.conf $FLUENTD_ARGS
