@@ -17,7 +17,7 @@ RUN apk --no-cache --update add \
     # apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
-RUN fluent-gem install fluent-plugin-kubernetes_metadata_filter fluent-plugin-elasticsearch fluent-plugin-aws-elasticsearch-service fluentd-plugin-kafka
+RUN fluent-gem install fluent-plugin-kubernetes_metadata_filter fluent-plugin-elasticsearch fluent-plugin-aws-elasticsearch-service fluent-plugin-kafka
 
 COPY fluent.conf /etc/fluent/
 
